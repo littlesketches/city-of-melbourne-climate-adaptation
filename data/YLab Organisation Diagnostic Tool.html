@@ -1,0 +1,642 @@
+<!DOCTYPE html>
+<!-- saved from url=(0040)http://localhost:8000/FYA/YLabOrgDT.html -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="Little Sketches">
+
+    <title>YLab Organisation Diagnostic Tool</title>
+    <!-- Bootstrap Core CSS -->
+    <link href="./YLab Organisation Diagnostic Tool_files/bootstrap.min.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link href="./YLab Organisation Diagnostic Tool_files/grayscale.css" rel="stylesheet">
+    <!-- Custom Fonts -->
+    <link href="./YLab Organisation Diagnostic Tool_files/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="http://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" rel="stylesheet" type="text/css">
+    <link href="http://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+	<!--Libraries-->		
+	<!-- jQuery -->
+    <script src="./YLab Organisation Diagnostic Tool_files/jquery.js"></script>
+    <!-- Bootstrap Core JavaScript -->
+    <script src="./YLab Organisation Diagnostic Tool_files/bootstrap.min.js"></script>
+    <!-- Plugin JavaScript -->
+    <script src="./YLab Organisation Diagnostic Tool_files/jquery.easing.min.js"></script>
+    <script src="./YLab Organisation Diagnostic Tool_files/jquery-ui.min.js"></script>
+    <!-- Custom Theme JavaScript -->
+    <script src="./YLab Organisation Diagnostic Tool_files/grayscale.js"></script>
+	<!--Visualisation plugins-->
+	<script src="http://cdnjs.cloudflare.com/ajax/libs/gsap/latest/TweenMax.min.js"></script>
+	<script src="./YLab Organisation Diagnostic Tool_files/TweenMax.min.js"></script>
+
+<!--Styling for visualisation-->	
+	<style type="text/css">
+		
+		@font-face {
+			font-family: Futura LT;
+			src: url(fonts/FuturaStd-Light.otf);
+			}
+		.textBlock {
+			margin-top: -30px;
+			font-family: "Futura LT", "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", "Helvetica", sans-serif;
+			}	
+		.left {
+			text-align: left
+			}
+		#titleLogo{
+			width: 350px;
+			margin-bottom: 30px;
+			margin-top: 30px
+			}	
+		#titleHeader {
+			font-size: 34pt;
+			}
+		.intro-text{
+			font-size: 14pt;
+		}
+
+		.annotation{
+			fill: #42dca3;
+			color: #42dca3;
+			font-size: 18pt;
+			font-family: "Futura LT", "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", "Helvetica", sans-serif;
+			margin: 0px;
+			}
+		.opaqueText{
+			opacity: 0.5;
+			}	
+		.opaque{
+			opacity: 0.5;
+			}	
+
+		#titleLogo{
+			margin-bottom: 40px;
+			}
+		#risk01{
+			width: 100%;
+			height: 100%;
+			margin-top: 0px;
+			margin-left: auto;
+			margin-right: auto ;
+			}	
+		#risk02{
+			width: 100%;
+			height:100%;
+			margin-top: 100px;
+			margin-bottom: 50px;
+			margin-left: auto;
+			margin-right: auto;
+			}
+		#risk03{
+			width: 100%;
+			height: 100%;
+			margin-top: 300px;
+			margin-left: auto;
+			margin-right: auto;
+			}
+	
+		.modal-header{
+			color: #000;
+			margin-bottom: -10px;
+			}	
+		.modal-text{
+			color: #000;
+			font-size: 8pt;
+			margin-bottom: 5px;
+			}
+
+		#actionIntro{
+				width: 100%;
+				height: 100%;
+				min-height: 800px;
+			}
+		
+	</style>	
+</head>
+
+<body id="page-top" data-spy="scroll" data-target=".navbar-fixed-top">
+    <!-- Navigation bar-->
+    <nav class="navbar navbar-custom navbar-fixed-top" role="navigation">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-main-collapse">
+                    <i class="fa fa-bars"></i>
+                </button>
+                <a class="navbar-brand page-scroll" href="http://localhost:8000/FYA/YLabOrgDT.html#page-top">
+                    <i class="fa fa-play-circle"></i>  <span class="light">YLab Youth Engagement</span> Diagnostic Tool
+                </a>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse navbar-right navbar-main-collapse">
+                <ul class="nav navbar-nav">
+                    <!-- Hidden li included to remove active class from about link when scrolled up past about section -->
+                    <li class="hidden active">
+                        <a href="http://localhost:8000/FYA/YLabOrgDT.html#page-top"></a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="http://localhost:8000/FYA/YLabOrgDT.html#risk01">Risk+Resilience</a>
+                    </li>
+                      <li>
+                        <a class="page-scroll" href="http://localhost:8000/FYA/YLabOrgDT.html#actions">Actions</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="http://localhost:8000/FYA/YLabOrgDT.html#sense">Sensemaking</a>
+                    </li>
+			                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container -->
+    </nav>
+    <!-- INTRO PAGE -->
+    <header class="intro">
+        <div class="intro-body">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-10 col-md-offset-1">
+                    	<img id="titleLogo" src="./YLab Organisation Diagnostic Tool_files/LogoWhite.png">
+                        <h1 id="titleHeader">Youth engagement diagnostic</h1>
+                        <p class="intro-text">A guidance tool for exploring how your organisation might better engage with young people.</p>
+                        <a href="http://localhost:8000/FYA/YLabOrgDT.html#risk01" id="startbutton" class="btn btn-circle page-scroll">
+                            <i class="fa fa-angle-double-down animated"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div></header>
+    <!-- RISK + RESILIENCE SECTION -->
+    <section id="risk01" class="container risk-section text-center">
+        <div class="row">
+            <div id="riskIntro" class="col-lg-8 col-lg-offset-2">
+            <br><br><br>
+                <h2>Climate change adaptation<br>a connected view</h2>
+                <p class="left"> A lot of work is being done to understand what our future climate might look like, and how this could affect the City of Melbourne's environment, people, and economy. This work describes a system full of interacting and moving parts, each with their own uncertainties and feedback loops. It's complex stuff.
+                <br><br>
+				The adaptation cost curve aims to connect the data, information and knowledge we already have. It builds a simplified model of the real world that lets us play with key assumptions and make connections that helps us better understand how climate change and actions for adaptation fit together. The model scaffolding and analysis that support the cost curve can help to:
+                
+				<br><br> <i class="fa fa-chevron-right"></i> Tell us about how the actions we are already taking are helping the city adapt to climate change; and
+				<br><i class="fa fa-chevron-right"></i> Support decisions about future actions and strategies that help us better adapt the municipality to climate change.
+				</p>	d		
+        	</div>
+	    	</div>
+		<div class="row">
+			<a href="http://localhost:8000/FYA/YLabOrgDT.html#risk02" class="btn btn-circle page-scroll">
+               <i class="fa fa-angle-double-down animated"></i></a>
+	    	</div>
+	    </section>
+    <!-- Explaining climate risk-->  
+    <section id="risk02" class="container content-section text-center">
+		<div class="row">
+			 <a id="button00" class="btn btn-default btn-sm">Concepts</a>
+			 <a id="button01" class="btn btn-default btn-sm">Climate risks</a>
+			 <a id="button02" class="btn btn-default btn-sm">Everyday hazards</a>
+			 <a id="button03" class="btn btn-default btn-sm">Climate change</a>
+			 <a id="button04" class="btn btn-default btn-sm">Impacts</a>
+			 <a id="button05" class="btn btn-default btn-sm">Thinking in systems</a>
+			 <a href="http://localhost:8000/FYA/YLabOrgDT.html#risk03" class="btn btn-circle-sm page-scroll"><i class="fa fa-angle-double-down animated"></i></a>
+			 </div>
+		<div id="riskResInstruction" class="row">
+		    <div class="col-lg-8 col-lg-offset-2">
+				<br><br>
+				<h3>How might we think about the value of adapting climate change in more human terms?</h3> 
+				<p class="left">	In this section we outline an approach to considering the benefits of adaptation. It is a model-based approach that organises and connects what we know about climate change, with the different types of options we have for adapt. Although the framework includes many indicators that can be refined and added to over time, it is not intended to be 'comprehensive' version of reality. Instead, we focus on modeling the most practical and meaningful components of climate change adaptation to make better sense of how the system behaves. 
+				<br><br>		
+				A model of adaptation value weaves together expert input, longitudinal datasets, simplifying assumptions, and practical judgments. It very quickly becomes very complex. However the logic and algorithms used can be illustrated in very human terms by thinking about how climate change and adaptation actions 'fits' with what we experience, and what we can influence. 	
+				<br><br>You can step though these concepts (and others on this site) by clicking through the green buttons above. Alternatively, you can use the menu navigation or scroll down to move ahead and learn more about how we might 'measure' the impacts of climate change and the value of adaptation actions. 
+				</p> 
+				</div>
+			</div>
+		<div id="riskResIntro" class="row">
+			<br>
+			<h3>Two ways to think about adaptation benefit?</h3>
+		
+			<div id="riskResIntroText" class="col-md-8 col-md-offset-2">
+					<p class="left">
+					There are numerous ways to think about climate change adaptation: most are highly nuanced but all talk about quite abstract concepts like response measures, vulnerability, resilience, and systems. To make things (a bit) simpler, we'll be thinking about adaptation as a combination of measures that: reduce risk from climate hazards, and build resilience of the municipality to climate change. These are two quite different lenses that operate in the same system that binds the City's people, environment and economy.
+					<br><br>
+					So we need to find a way to consider both of these types of adaptation benefit. Let's start with climate risk...
+						</p>
+					</div>
+			</div>		
+
+		</section>
+	<!-- Risk Valuation Visualisation-->
+    <section id="risk03" class="container content-section text-center">
+		<div class="row">
+			 <a id="button07" class="btn btn-default btn-sm">Climate science</a>
+			 <a id="button08" class="btn btn-default btn-sm">Research and studies</a>
+			 <a id="button09" class="btn btn-default btn-sm">Risk indicators</a>
+			 <a id="button10" class="btn btn-default btn-sm">Measurement</a>
+			 <a id="button11" class="btn btn-default btn-sm">Valuing risk</a>
+			 <a id="button12" class="btn btn-default btn-sm">Resilience indicators</a>
+			 <a href="http://localhost:8000/FYA/YLabOrgDT.html#actions" class="btn btn-circle-sm page-scroll"><i class="fa fa-angle-double-down animated"></i></a></div>
+		<div id="riskInstruction" class="row">
+			    <div class="col-lg-8 col-lg-offset-2">
+					<br><br>
+					<h3>How can we begin to put some meaningful value on the benefits of climate change adaptation? </h3> 
+					<p class="left">	In this section we outline a lineage of research and inputs that could support a framework of  adaptation risk indicators and resilience criteria. On the surface this would seem like a 'theoretical' framework, however its scope and detail have been shaped by and designed for the City of Melbourne's influence and decision making process.
+					<br><br>
+					The more quantifiable lens of risk is modeled using a 'reference case' which represents the future risk from extreme climate events if no additional adaptation actions are implemented. Put another way, this is the risk from extreme climate if we continue to do only what we are doing now. 
+					<br><br>	
+					The economic value of risk is limited to: i) damage to commercial and residential buildings; ii) damage to civil infrastructure; iii) business productivity loss from lost employee time (i.e. from climate-related disruptions and delays); and iv) increased costs of energy for cooling.
+					<br><br>
+					A reference case for social risk measures (heat-related deaths and disrupted services) is also presented, together with a set of resilience criteria for adaptation actions. These non-economic perspectives are critical to help us identify and recognise the more intangible value of adaptation.
+					</p> 
+					</div>
+			</div>
+	   	<div id="impactVisContainer" class="svg-container">
+			<svg id="impactVis" class="svg-content" xmlns="http://www.w3.org/2000/svg" height="100%" width="100%" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" viewBox="0 0 1050 700" preserveAspectRatio="xMinYMin meet">
+				 <g id="riskMeasureVis">
+				  	<text id="riskMeasureHeader" font-family="Futura Lt" fill="#ffffff">
+						  <tspan font-size="14px" y="35" x="25">HOW MIGHT WE START TO PUT SOME</tspan>
+						  <tspan font-size="36px" y="71" x="25">MEANINGFUL MEASURES AND VALUE ON CLIMATE IMPACTS</tspan>
+						</text>
+	
+					</g>
+			 	 </svg>
+			</div>		
+			
+		<div id="reslienceIndSketch" class="row">
+			<div class="col-md-8">
+
+			<div id="resilienceIndText" div="" class="paraLeft col-md-4">
+				<br><br>
+				<p class="left">Resilience to climate change is a difficult concept to define, let alone measure. One way to to think about resilience is the capacity of a 'system' to absorb shocks, bounce back, evolve and transform. These ideas are not easy to quantify and are frequently woven into measures and actions that also reduce risk. However  what we intuitively know however is that there is value in raising the resilience of people, environment and economy to climate risk.
+				<br><br>
+				In contrast to risk or avoided loss, we can think about resilience through a 'positive' lens. There is no 'stopping rule' for raising the level of resilience. And there is no baseline measure(s) of resilience. Instead, we need to think about improving resilience at the action level. 
+
+				The six resilience 'criteria' that are illustrated here are designed to be used alongside the risk indicators to better capture the broader adaptation benefit of individual actions.
+				<br><br>
+				</p></div>	
+			</div>						 
+	
+		<div id="streamGraphGroup" class="container content-section text-center">
+			<!--	<p  id = "streamIntro" class ="annotation">So what does the model say....</p> -->
+				<h3 id="streamHeader"> Model estimate of the impact of future climate risk</h3>
+
+
+		</div>
+		</div></section>	
+
+    <!-- ACTION SECTION  -->
+    <section id="actions" class="action-section text-center">
+        <div class="container content-section">
+            <div class="col-lg-10 col-lg-offset-1">
+                <h2>Our actions and how they help the municipality adapt to climate change</h2>
+                <p class="left"> 
+
+                In this movement we apply the adaption risk and resilience framework to a set of current, planned and 'speculative' City of Melbourne actions. 
+                <br><br>
+                Many of the actions the City of Melbourne are taking are already helping to adapt the municipality to climate risks. Most of these actions are not driven by long-term adaptation concerns alone but do contain some 'co-benefit' for adaptation. This adaptation benefit is what we're trying to value here. We're isolating this component because we want to develop an evidence-based approach for thinking about and comparing adaptation actions.  
+                <br><br>		
+                With this in mind it is important to remember the adaptation value is additional part to a full 'business case'. Or put another way, you could think of this value as adaptation lens for comparing and actions. 
+       		
+			 </p>
+               </div>
+        	</div>
+					<div class="col-lg-8 col-lg-offset-2">
+				 <a href="http://localhost:8000/FYA/YLabOrgDT.html#actionsVisSection" class="btn btn-circle page-scroll">
+                            <i class="fa fa-angle-double-down animated"></i>
+              </a>
+            </div>
+    	</section>
+    <!-- Action description -->
+    <section id="actionsVisSection" class="container content-section text-center">
+
+		<div class="row">
+		 	 <div class="container content-section text-center">
+		        	<div id="actionControls">	
+						<ul class="list-inline">
+							<li><div class="dropdown">
+								    <button class="btn btn-default btn-sm dropdown-toggle" type="button" data-toggle="dropdown">Action breakdown<span class="caret"></span></button>
+								    <ul class="dropdown-menu" id="menuImpact" role="menu" aria-labelledby="menuImpact">
+								      <li role="presentation"><a role="menuitem" tabindex="-1" id="buttonActionArea">by work stream</a></li>
+								      <li role="presentation"><a role="menuitem" tabindex="-1" id="buttonActionStatus">by project status</a></li>
+								     <li role="presentation"><a role="menuitem" tabindex="-1" id="buttonActionModel">by risk model type</a></li>
+								  
+								    </ul></div>
+							    </li>
+							<li><a id="button13" class="btn btn-default btn-sm">Risk model approach</a></li>	
+						  	<li><a id="button14" class="btn btn-default btn-sm">Action risk modeling</a></li>	
+
+   					 		<li><a href="http://localhost:8000/FYA/YLabOrgDT.html#sense" class="btn btn-circle-sm page-scroll"><i class="fa fa-angle-double-down animated"></i></a></li>
+
+			                </ul>
+		            	</div>
+					</div>  
+			 </div>
+
+    	<div id="actionIntro" class="row">
+			<div class="col-md-10 col-md-offset-1"> 
+				<br><br>
+				<h3>How might we use the lenses of risk and resilience to better value adaptation benefit of our actions?</h3> 
+				<p class="left">The City of Melbourne has identified over 100 current and planned actions that have adaptation value: by reducing risk or raising resilience to climate change. So what are they? And what can they us about how Council is currently adapting climate change?<br><br> 
+
+				In this section we'll take a closer look at the diverse range of adaptation actions and the challenges this presents in applying a consistent and comparable way of thinking about different actions. Let's start by taking a look at what the adaptation actions are and how they could be grouped.
+				</p>
+	
+				</div>
+			</div>
+
+		</section>
+   
+	<!-- SENSEMAKING SECTION  -->
+    <section id="sense" class="sense-section text-center">
+        <div class="container content-section">
+            <div class="col-lg-10 col-lg-offset-1">
+                <h2>START MAKING SENSE</h2>
+                <p class="left">
+                In this final movement we explore how might we make this modeling and way of thinking useful to City of Melbourne staff and decision makers?
+                <br><br>
+                 We take a visual and interactive approach to exploring the outputs of the action modeling, to make sense of what the 'numbers' are really telling us. Our starting point is a 'cost curve' - a tool widely used in economics - which ranks actions by their cost-effectiveness for economic risk reduction. This is a powerful decision support and communication tool but abstracts away most of the critical detail and systems thinking applied to this adaptation benefit framework. <br><br>
+             	 To enhance the cost curve, we can add layers of social risk and our resilience criteria to help you understand the real texture behind the raw economic numbers. These lenses provide different perspectives and insights into the how to compare adaptation actions, and the City of Melbourne progressing towards adapting the municipality to climate change.
+                 <br><br>
+               
+				 </p>
+                </div>
+            </div>
+		<div class="col-lg-8 col-lg-offset-2">
+			<a href="http://localhost:8000/FYA/YLabOrgDT.html#curveVis" class="btn btn-circle page-scroll">
+                <i class="fa fa-angle-double-down animated"></i>
+              	</a>
+            </div>
+    	</section>		
+	<!-- Cost curve and sensemaking visualisation -->
+    <section id="curveVis" class="container content-section text-center">
+		<h3>Exploring the cost-effectiveness of actions to reducing climate risk</h3>
+        <div class="row">
+			<div id="costCurveControls01">	
+				<ul class="list-inline">
+				  	<li><a class="btn btn-default btn-sm" id="ccTutorialButton"><span class="network-name">Show me!</span></a></li>
+			   		<li><div class="dropdown">
+					    <button class="btn btn-default btn-sm dropdown-toggle" type="button" data-toggle="dropdown">Cost-effectiveness measure<span class="caret"></span></button>
+					    <ul class="dropdown-menu" id="menuRatio" role="menu" aria-labelledby="menuImpact">
+					      <li role="presentation"><a role="menuitem" tabindex="-1" id="maccCCbutton">Dual ratios</a></li>
+					      <li role="presentation"><a role="menuitem" tabindex="-1" id="bcCCbutton">Benefit per cost</a></li>
+					      <li role="presentation"><a role="menuitem" tabindex="-1" id="cbCCbutton">Cost per benefit</a></li>
+					    </ul></div>
+				 		 </li>
+					<li><div class="dropdown">
+						    <button class="btn btn-default btn-sm dropdown-toggle" type="button" data-toggle="dropdown">Impact measure<span class="caret"></span></button>
+						    <ul class="dropdown-menu" id="menuImpact" role="menu" aria-labelledby="menuImpact">
+						      <li role="presentation"><a role="menuitem" tabindex="-1" id="ecoCCbutton">Economic risk reduction</a></li>
+						      <li role="presentation"><a role="menuitem" tabindex="-1" id="socialCCbutton">Social risk reduction</a></li>			
+						      <li role="presentation"><a role="menuitem" tabindex="-1" id="mortalityCCbutton">Mortality (heat related) risk reduction</a></li>
+						    </ul></div>
+					    </li>
+					 <li><div class="dropdown">
+						    <button class="btn btn-default btn-sm dropdown-toggle" type="button" data-toggle="dropdown">Grouping colour<span class="caret"></span></button>
+						    <ul class="dropdown-menu" id="menuImpact" role="menu" aria-labelledby="menuImpact">
+						      <li role="presentation"><a role="menuitem" tabindex="-1" id="buttonStreamColour">Focus area</a></li>
+						      <li role="presentation"><a role="menuitem" tabindex="-1" id="buttonBranchColour">Branch</a></li>
+						      <li role="presentation"><a role="menuitem" tabindex="-1" id="buttonTypeColour">Type</a></li>
+						      <li role="presentation"><a role="menuitem" tabindex="-1" id="buttonStatusColour">Status</a></li>
+						    </ul></div>
+					    </li>
+					 <li><div class="dropdown">
+						    <button class="btn btn-default btn-sm dropdown-toggle" type="button" data-toggle="dropdown">Resilience filter<span class="caret"></span></button>
+						    <ul class="dropdown-menu" id="menuImpact" role="menu" aria-labelledby="menuImpact">
+						      <li role="presentation"><a role="menuitem" tabindex="-1" id="buttonWellbeing">Improve physical and mental wellbeing</a></li>
+						      <li role="presentation"><a role="menuitem" tabindex="-1" id="buttonCohesion">Improve community cohesion</a></li>
+						      <li role="presentation"><a role="menuitem" tabindex="-1" id="buttonAwareness">Improve awareness of climate change</a></li>
+						      <li role="presentation"><a role="menuitem" tabindex="-1" id="buttonHealth">Improve environmental health (air pollution and water quality)</a></li>
+						      <li role="presentation"><a role="menuitem" tabindex="-1" id="buttonAdaptive">Improve adaptive capacity (City of Melbourne)</a></li>
+						      <li role="presentation"><a role="menuitem" tabindex="-1" id="buttonIdentity">Improve (and maintain) city identity</a></li>
+						    </ul></div>
+					    </li> 	
+					 <li><div class="dropdown">
+						    <button class="btn btn-default btn-sm dropdown-toggle" type="button" data-toggle="dropdown">Climate future<span class="caret"></span></button>
+							    <ul class="dropdown-menu" id="menuImpact" role="menu" aria-labelledby="menuImpact">
+							      <li role="presentation"><a role="menuitem" tabindex="-1" id="ccScenario01">Median risk IPCC (2007) A1B and A1F1 scenarios for Victoria</a></li>
+							      <li role="presentation"><a role="menuitem" tabindex="-1" id="ccScenario02">Low change IPCC (2007) A1B and A1F1 scenarios for Victoria</a></li>
+							      <li role="presentation"><a role="menuitem" tabindex="-1" id="ccScenario03">High change IPCC (2007) A1B and A1F1 scenarios for Victoria</a></li>
+							      <li role="presentation"><a role="menuitem" tabindex="-1" id="ccScenario04">Medium Impact &gt; CSIRO CC Projections Model (RCP 4.5: CNRM)</a></li>
+							      <li role="presentation"><a role="menuitem" tabindex="-1" id="ccScenario04">High Impact &gt; CSIRO CC Projections Threshold (RCP 8.5: CNRM)</a></li>
+							      <li role="presentation"><a role="menuitem" tabindex="-1" id="ccScenario06">Medium Impact &gt; CSIRO CC Projections Model (RCP 4.5: CESMI-CAM)</a></li>
+							      <li role="presentation"><a role="menuitem" tabindex="-1" id="ccScenario067">High impact&gt; CSIRO CC Projections Model (RCP 8.5: CESMI-CAM</a></li>
+							    </ul></div>
+ 						</li> 
+			  		<li><a href="http://localhost:8000/FYA/YLabOrgDT.html#appendix" class="btn btn-circle-sm page-scroll"><i class="fa fa-angle-double-down animated"></i></a>
+			  			</li>
+	                </ul>
+            	</div>
+			<div id="costCurve" class="svg-container"></div>
+            	</div>
+    	</section>
+	
+	<section id="appendix" class="appendix-section container text-center">
+
+		<div id="appendixButtonContainer" class="row">
+			 	 <div class="container content-section text-center">
+			        	<div id="actionControls">	
+							<ul class="list-inline">
+								<li><a id="button15" class="btn btn-default btn-sm">Risk by the hard numbers...</a></li>	
+							  	<li><a id="button16" class="btn btn-default btn-sm">Multi-criteria visualisation</a></li>	
+				                </ul>
+			            	</div>
+						</div>  
+				 </div>
+
+		<div id="moreViewsIntro" class="col-lg-6 col-lg-offset-3">
+				<br><br><br><br><h3>Appendix: And that's it...right?! <br></h3>
+				<p class="left">The adaptation cost curve provides a number of different views and perspectives on the value of adaptation actions. Although there are social indicators and resilience criteria overlaid to this curve, it starting point is based in economic risk reduction - a language that is familiar, quantifiable and most easily recognised in the existing decision making paradigm.
+				<br><br>
+				As an addendum to the cost curve, we can look either delve deeper into the numbers - the risk reduction outputs of the modeling - or look at further ways to view and compare actions across the multiple risk and resilience criteria we have sought to measure. The two pages available in this section are provided for you to take your exploration in either of these directions. 
+			   	</p></div>
+
+		<div id="parSetsSection">
+			<br><br>&lt;<h3>Experimental views: <br>
+			How might think about multi-criteria ranking and robustness</h3>
+			<p id="parSetsText">Below is a lo-fi prototype visualisation to help explore performance across risk and resilience dimensions. Each line represents an action with 'higher' lines indicator high relative performance against a criteria.  Patterns can be explored using the movable and brushable axes. ITooltips and colour to identify actions coding will be added to make this easier to use!.</p><p>
+		
+			</p><div id="parSets" class="svg-container"></div>
+			</div>	
+
+		<div id="dataSummary" class="container content-section text-center">
+			<h3>Sense checking of the risk model outputs</h3> 
+			<p> Modeled risk reduction actions - which totaled around 20 out of 40 better candidates, and included potential future actions - are expected to reduce economic climate risks by around a quarter, and could reduce heat related deaths by around 40% to 2100.</p>
+			<br> 
+			<div class="row">
+				<div =id="actionDescriptions" class="row">
+						<div class="col-md-4">
+							<p class="dataTextLabel">Estimated impact <br>of hazards </p>
+							<p class="dataTextHeader"> Current risk in 2015</p>
+							<p class="dataText"> <i class="fa fa-chevron-right"></i> Hot day: $0.5m</p>
+							<p class="dataText"> <i class="fa fa-chevron-right"></i> Very hot day: $1.1m</p>
+							<p class="dataText"> <i class="fa fa-chevron-right"></i> Minor flood: $180m</p>
+							<p class="dataText"> <i class="fa fa-chevron-right"></i> Medium flood: $360m</p>
+							<p class="dataText"> <i class="fa fa-chevron-right"></i> Major flood: $3,050m</p>
+							<br>
+							<p class="dataTextHeader"> And in 2015</p>
+							<p class="dataText">  <i class="fa fa-chevron-right"></i>  Hot day: $1.2m (+160%)</p>
+							<p class="dataText">  <i class="fa fa-chevron-right"></i>  Very hot day: $2.6m (+138%)</p>
+							<p class="dataText">  <i class="fa fa-chevron-right"></i>  Minor flood: $190m (+2.7%)</p>
+							<p class="dataText">  <i class="fa fa-chevron-right"></i>  Medium flood: $370m (+4.6%)</p>
+							<p class="dataText">  <i class="fa fa-chevron-right"></i>  Major flood: $3,190m (+4.7%) </p>
+
+							</div>
+						<div class="col-md-4">
+							<p class="dataTextLabel">Estimated risk <br>(adjusted for hazard frequency)</p>
+							<p class="dataTextHeader"> Current annual risk in 2015</p>
+							<p class="dataText">  <i class="fa fa-chevron-right"></i>  Estimated to be around $56m</p>
+							<br>
+							<p class="dataTextHeader"> In 2030</p>
+							<p class="dataText">  <i class="fa fa-chevron-right"></i>  Between $82m and $92m (Median +27%)</p>
+							<br>
+							<p class="dataTextHeader"> In 2070</p>
+							<p class="dataText">  <i class="fa fa-chevron-right"></i>  Between $118m and $158m (Median +94%)</p>
+							<br>
+							<p class="dataTextHeader"> In 2100</p>
+							<p class="dataText">  <i class="fa fa-chevron-right"></i>  Between $141m and $224m (Median +163%)</p>
+
+							</div>
+						<div class="col-md-4">
+							<p class="dataTextLabel">Estimated risk reduction <br>from modeled actions</p>
+							<p class="dataTextHeader"> By headline risk indicator</p>
+							<p class="dataText">  <i class="fa fa-chevron-right"></i>  Economic value: ~27%</p>
+							<p class="dataText">  <i class="fa fa-chevron-right"></i>  Heat-related mortality: ~45%</p>
+							<p class="dataText">  <i class="fa fa-chevron-right"></i> Disruptions: ~0.6%</p>		
+							<br>
+							<p class="dataTextHeader"> Economic value by risk</p>
+							<p class="dataText">  <i class="fa fa-chevron-right"></i>  Heat: ~19%</p>
+							<p class="dataText">  <i class="fa fa-chevron-right"></i>  Flooding: ~33%</p>
+							<br>
+							<p class="dataTextHeader"> Economic value by indicator area</p>	
+							<p class="dataText">  <i class="fa fa-chevron-right"></i>  Business productivity: ~13%</p>
+							<p class="dataText">  <i class="fa fa-chevron-right"></i>  Energy and water costs: ~43%</p>
+							<p class="dataText">  <i class="fa fa-chevron-right"></i>  Damage to commercial buildings: ~19%</p>
+							<p class="dataText">  <i class="fa fa-chevron-right"></i> Damage to civil infrastructure: ~57%</p>
+							<p class="dataText">  <i class="fa fa-chevron-right"></i>  Damage to residential buildings ~50%</p>
+					
+							</div>
+						</div>
+			</div>
+			<br><br><p> Note: all figures are ESTIMATES subject to modeled inputs and assumptions and are presented in $2015 terms</p>
+			</div>
+
+	</section>
+    <!-- Footer -->
+    <footer>
+
+        	
+   		</footer>
+<!--Visualation scripts-->
+
+<!--Sketch drawing animation code-->
+<script> //animation mappping and draw code with TweenMax
+	var group = 0;	//group svg elements for drawing phases	
+					// element											time	delay	color 	strokewidth
+	var svgGroups = [[document.getElementById("dummy"),					0.0, 	0.0,	"#fff",			2.5	], 		// 0
+					 [document.getElementById("sketchMan"),				0.10, 	0.05,	"#fff",			2.5	], 		// 1
+					 [document.getElementById("sketchHeat"),			0.10, 	0.05,	"#fff",			2.5	], 		// 2
+					 [document.getElementById("sketchDrought"),			0.15, 	0.08,	"#fff",			2.5	], 		// 3
+					 [document.getElementById("sketchFlood"),			0.19, 	0.08,	"#fff",			2.5	], 		// 4
+					 [document.getElementById("sketchWind"),			0.50, 	0.10,	"#fff",			2.5	], 		// 5
+					 [document.getElementById("sketchHealth"),			0.20, 	0.10,	"#fff",			1.5	], 		// 6
+					 [document.getElementById("sketchEnergy"),			1.50, 	0.10,	"#fff",			1.5	], 		// 7
+					 [document.getElementById("sketchWater"),			0.30, 	0.10,	"#fff",			1.5	], 		// 8
+					 [document.getElementById("sketchTransport"),		0.30, 	0.10,	"#fff",			1.5	], 		// 9
+					 [document.getElementById("sketchHomes"),			0.20, 	0.10,	"#fff",			1.5	], 		// 10
+					 [document.getElementById("sketchCommercial"),		0.20, 	0.10,	"#fff",			1.5	], 		// 11
+					 [document.getElementById("sketchSocial"),			0.20, 	0.10,	"#fff",			1.5	], 		// 12
+					 [document.getElementById("sketchEnviro"),			0.40, 	0.10,	"#fff",			1.5	], 		// 13
+					 [document.getElementById("sketchEconomic"),		1.50, 	0.10,	"#fff",			1.5	], 		// 14
+					 [document.getElementById("heatConnections"),		0.8, 	0.30,	"#dedbdb",	1	], 		// 15
+					 [document.getElementById("droughtConnections"),	0.8, 	0.10,	"#dedbdb",	1	], 		// 16
+					 [document.getElementById("floodConnections"),		0.8, 	0.10,	"#dedbdb",	1	], 		// 17
+					 [document.getElementById("windConnections"),		0.8, 	0.30,	"#dedbdb",	1	], 		// 18					
+	 			 	 [document.getElementById("direction01"),			1.0, 	0.20,	"#dedbdb",		1	], 		// 19
+					 [document.getElementById("direction02"),			1.0, 	0.50,	"#42dca3",		1	], 		// 20
+					 
+					 [document.getElementById("rmHazardSketch"),		2.5, 	2.49,	"#ffffff",		1	], 		// 21
+					 [document.getElementById("rmIndicatorSketch"),		1.5, 	1.4,	"#ffffff",		1	], 		// 22
+
+					 [document.getElementById("riskUmbrellaSketch"),	1.0, 	0.9,	"#ffffff",		2	], 		// 23
+					 [document.getElementById("resilienceBounceSketch"),1.0, 	0.9,	"#ffffff",		2	], 		// 24
+					 [document.getElementById("citySketch"),			1.0, 	0.3,	"#838383",		2	], 		// 25
+					 [document.getElementById("peopleSketch"),			0.3, 	0.25,	"#838383",		2	], 		// 26
+					 [document.getElementById("pollutionSketch"),		0.2, 	0.15,	"#838383",		2	], 		// 27
+					 [document.getElementById("melbourneLogo"),			0.2, 	0.1,	"#838383",		2	], 		// 28
+
+
+					 [document.getElementById("direction01"),			0.50, 	0.40,	"#fff",			1	] 		// 
+ 					 ];  
+	var NS="http://www.w3.org/2000/svg";
+	var Animation = new TimelineMax();    
+
+	function animate(group)	{
+		var svgPaths = svgGroups[group][0].getElementsByTagNameNS(NS,"path");	
+		Animation.stop()		
+		Animation.play()
+		for(var i = 0; i < svgPaths.length; i++){
+			var line = svgPaths[i];
+			var time = svgGroups[group][1];
+			var dims = line.getTotalLength();
+			var linearea = dims
+			var strokeWidth = (line.getAttribute("stroke-width") == null)?3:line.getAttribute("stroke-width");
+			line.style.strokeDasharray = (linearea)+" "+(linearea);
+			line.style.strokeDashoffset = ((/Firefox/i.test(navigator.userAgent))? linearea/strokeWidth : linearea);
+			line.style.stroke = svgGroups[group][3];
+			line.style.strokeWidth =  svgGroups[group][4];
+			line.style.strokeLinecap = "round";
+
+			Animation.add(TweenMax.to(line.style,time,{strokeDashoffset:0,ease:Sine.easeInOut,onUpdate:function(){
+				var n = document.createTextNode(' ');
+				document.body.appendChild(n);
+				document.body.removeChild(n);
+			}}),(i>0)?'-= '+ svgGroups[group][2] + '':"");
+			}  	
+		}	
+
+	function restartAnimate(group)	{
+		var svgPaths = svgGroups[group][0].getElementsByTagNameNS(NS,"path");	
+		Animation.restart()
+		for(var i = 0; i < svgPaths.length; i++){
+			var line = svgPaths[i];
+			var time = svgGroups[group][1];
+			var dims = line.getTotalLength();
+			var linearea = dims
+			var strokeWidth = (line.getAttribute("stroke-width") == null)?3:line.getAttribute("stroke-width");
+			line.style.strokeDasharray = (linearea)+" "+(linearea);
+			line.style.strokeDashoffset = ((/Firefox/i.test(navigator.userAgent))? linearea/strokeWidth : linearea);
+			line.style.stroke = svgGroups[group][3];
+			line.style.strokeWidth =  svgGroups[group][4];
+			line.style.strokeLinecap = "round";
+
+			Animation.add(TweenMax.to(line.style,time,{strokeDashoffset:0,ease:Sine.easeInOut,onUpdate:function(){
+				var n = document.createTextNode(' ');
+				document.body.appendChild(n);
+				document.body.removeChild(n);
+			}}),(i>0)?'-= '+ svgGroups[group][2] + '':"");
+			}  	
+		}
+
+	 </script>	
+	<!--Section animation and title controls-->
+
+<!-- Pop up script-->
+<script>
+$(document).ready(function(){
+	$("a[rel=popover]")
+	    .popover({trigger:'hover', placement:'bottom', title:'Title!', content:'Content'})
+	    .click(function(e) {
+	        e.preventDefault();
+	     });
+
+});
+</script>
+
+
+
+
+
+</body></html>
